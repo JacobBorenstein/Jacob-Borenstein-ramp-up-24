@@ -1,4 +1,4 @@
-def interview(list:list[int],mins:int):
+def interview(list:'list[int]',mins:int):
     if mins > 120:
         return 'disqualified'
     
