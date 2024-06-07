@@ -38,27 +38,38 @@ async def add_Book(title:str,author:str,year:str):
 
 @app.get("/books/")
 async def get_all_books():
+    
     return booksDB
 
 @app.get("/books/{id}")
 async def get_book_by_id(id:int):
+    
     for book in booksDB:
+     
         if book.id == id:
+    
             return book
         
 @app.put("/books/{id}")
 async def update_book(id: int, new_title:str, new_author:str, new_year:str):
+    
     for book in booksDB:
+        
         if book.id == id:
+            
             book.title = new_title
             book.author = new_author
             book.year = new_year
+    
             return book
         
 @app.delete("/books/{id}")
 async def delete_book(id:int):
+    
     for index, book in enumerate(booksDB):
+    
         if book.id == id:
+    
             booksDB.pop(index)
 
         
